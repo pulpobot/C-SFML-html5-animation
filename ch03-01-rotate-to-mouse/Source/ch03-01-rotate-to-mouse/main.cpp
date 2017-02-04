@@ -7,7 +7,7 @@
 
 int main() 
 {
-	sf::RenderWindow window(sf::VideoMode(800,600), "Key Codes", sf::Style::Titlebar | sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode(800,600), "Rotate To Mouse", sf::Style::Titlebar | sf::Style::Close);
 	window.setFramerateLimit(60);
 	
 	Arrow * arrow = new Arrow(window.getSize().x/2.0f, window.getSize().y / 2.0f);

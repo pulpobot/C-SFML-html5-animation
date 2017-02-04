@@ -2,7 +2,7 @@
 #include <iostream>
 int main() 
 {
-	sf::Window window(sf::VideoMode(800,600), "Event Handling", sf::Style::Titlebar | sf::Style::Close);
+	sf::Window window(sf::VideoMode(800,600), "Mouse Events", sf::Style::Titlebar | sf::Style::Close);
 	window.setFramerateLimit(60);
 	sf::Clock clickClock;
 
