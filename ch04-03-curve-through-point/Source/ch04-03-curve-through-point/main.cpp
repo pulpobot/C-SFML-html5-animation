@@ -8,11 +8,11 @@ int main()
 	sf::ContextSettings context;
 	context.antialiasingLevel = 4;
 
-	sf::RenderWindow window(sf::VideoMode(400,400), "Drawing Curves", sf::Style::Titlebar | sf::Style::Close, context);
+	sf::RenderWindow window(sf::VideoMode(400,400), "Curve Through Point", sf::Style::Titlebar | sf::Style::Close, context);
 	window.setFramerateLimit(60);
 
 	std::vector<sf::Vertex> bezierCurvePoints;
-	Utils::Bezier::QuadraticBezierCurve(sf::Vector2f(100, 200), sf::Vector2f(200,200), sf::Vector2f(300, 200), 20, bezierCurvePoints, sf::Color::Red);
+	Utils::Bezier::QuadraticBezierCurve(sf::Vector2f(100, 200), sf::Vector2f(200,200), sf::Vector2f(300, 200), 20, bezierCurvePoints, sf::Color::Red, true);
 
 	while (window.isOpen())
 	{
@@ -26,7 +26,7 @@ int main()
 					break;
 				case sf::Event::MouseMoved:
 					//While the mouse button is being pressed, add a new vertex to the current line with the mouse position
-					Utils::Bezier::QuadraticBezierCurve(sf::Vector2f(100, 200), sf::Vector2f(event.mouseMove.x, event.mouseMove.y), sf::Vector2f(300, 200), 20, bezierCurvePoints, sf::Color::Red);
+					Utils::Bezier::QuadraticBezierCurve(sf::Vector2f(100, 200), sf::Vector2f(event.mouseMove.x, event.mouseMove.y), sf::Vector2f(300, 200), 20, bezierCurvePoints, sf::Color::Red, true);
 					break;
 			}
 		}
