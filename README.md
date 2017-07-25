@@ -2,11 +2,21 @@ Sample code from https://github.com/lamberta/html5-animation ported to C++ and S
 
 State: In-Progress.
 
-SFML Version: 2.4.1
+SFML Version: 2.4.2
 
 Folder Structure:
 - chapter#-example#-examplename
-	* /Source: Source Code - Visual Studio 2015 Project.
-	* Windows Executable x86 File - Static Linked (A double click should be enough to make it work).
+	* CMakeList.txt
+	* /deps: Any libraries required by the example (except for SFML)
+	* /src: Source Code.
+	* /res: stores any assets required by the example (e.g fonts or images).
+	* /build: Precompiled Windows Executable x86 File.
 
-Note: If you want to build the Visual Studio Project you may need to change the "Additional Include Directories" and "Additional Library Directories" properties in project settings to match yours. Check the SFML Documentation for more info on how to do this: http://www.sfml-dev.org/tutorials/2.4/start-vc.php.
+- shared-deps
+	* /SFML-x.x.x: Current SFML Version being used by all the examples
+
+Note 1: If you want to build any example, just run CMake on their own root folder.
+
+Note 2: I have built all the examples on Windows with CMake; eventually will try to add Linux and OSx support, but I'll be more than happy to recieve any help with this in the meantime :)
+
+Note 3: Example ch04-12-video-frames uses Visual Studio temporarily.
