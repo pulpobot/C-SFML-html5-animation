@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc ..\..\..\lib\libsfml-main.a  CMakeFiles/sfml-main.dir/MainWin32.cpp.obj
+C:\MinGW\bin\ranlib.exe ..\..\..\lib\libsfml-main.a

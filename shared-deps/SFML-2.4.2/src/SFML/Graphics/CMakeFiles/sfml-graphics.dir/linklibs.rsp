@@ -1,0 +1,1 @@
+../../../lib/libsfml-window.a ../../../lib/libsfml-system.a -lopengl32 ../../../extlibs/libs-mingw/x86/libfreetype.a ../../../extlibs/libs-mingw/x86/libjpeg.a -lwinmm -lgdi32 -lopengl32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
