@@ -5,6 +5,8 @@
 
 const float BOUNCE = -0.7f;
 const float GRAVITY = 0.1f;
+float oldX = 0;
+float oldY = 0;
 
 void CheckBoundaries(sf::RenderWindow &window, Ball &ball) {
     float left = 0;
@@ -34,12 +36,19 @@ void CheckBoundaries(sf::RenderWindow &window, Ball &ball) {
     ball.Translate(ball.vx, ball.vy);
 }
 
+void TrackVelocity(Ball &ball) {
+    ball.vx = ball.GetX() - oldX;
+    ball.vy = ball.GetY() - oldY;
+    oldX = ball.GetX();
+    oldY = ball.GetY();
+}
+
 int main() {
     //You can turn off antialiasing if your graphics card doesn't support it
     sf::ContextSettings context;
     context.antialiasingLevel = 4;
 
-    sf::RenderWindow window(sf::VideoMode(400, 400), "Drag and Move 1", sf::Style::Titlebar | sf::Style::Close,
+    sf::RenderWindow window(sf::VideoMode(400, 400), "Throwing", sf::Style::Titlebar | sf::Style::Close,
                             context);
     window.setFramerateLimit(60);
 
@@ -55,7 +64,7 @@ int main() {
     debugText.setFont(font);
     debugText.setFillColor(sf::Color::Black);
     debugText.setCharacterSize(15);
-    debugText.setString("Press and drag circle with mouse.");
+    debugText.setString("Press, drag and throw circle with mouse.");
 
     std::mt19937 mt(time(NULL));
     std::uniform_real_distribution<float> dist(0.0f, 1.0f);
@@ -73,8 +82,9 @@ int main() {
                     window.close();
                     break;
                 case sf::Event::MouseButtonPressed:
-                    if (Utils::ContainsPoint(ball.GetBounds(), event.mouseButton.x, event.mouseButton.y))
+                    if (Utils::ContainsPoint(ball.GetBounds(), event.mouseButton.x, event.mouseButton.y)) {
                         isMouseDown = true;
+                    }
                     break;
                 case sf::Event::MouseButtonReleased:
                     isMouseDown = false;
@@ -90,7 +100,9 @@ int main() {
         window.clear(sf::Color::White);
         window.draw(debugText);
 
-        if (!isMouseDown)
+        if (isMouseDown)
+            TrackVelocity(ball);
+        else
             CheckBoundaries(window, ball);
 
         window.draw(ball.shape);
