@@ -1,5 +1,9 @@
 .idea
 .idea\*
+_builds
+_builds\*
+build
+build\*
 cmake-build-release
 cmake-build-release\*
 cmake-build-debug
