@@ -5,7 +5,9 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 #build configuration
 get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${PROJECT_NAME})
-set(RELEASE_PATH ../build)
+get_filename_component(BUILDS_PATH ${CMAKE_CURRENT_SOURCE_DIR} PATH)
+set(RELEASE_PATH ${BUILDS_PATH}/_builds)
+
 #add compiler static flags
 #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS} -static-libgcc -static-libstdc++")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
