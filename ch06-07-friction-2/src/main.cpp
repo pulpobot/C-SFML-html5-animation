@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <random>
 #include "Ball.h"
 
 const float FRICTION = 0.95f;

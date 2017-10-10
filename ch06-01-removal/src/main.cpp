@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <random>
 #include "Ball.h"
-#include <string>
 
 const int NUM_BALLS = 10;
 
