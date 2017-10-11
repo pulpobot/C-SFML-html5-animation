@@ -8,7 +8,7 @@ int main() {
     sf::ContextSettings context;
     context.antialiasingLevel = 4;
 
-    sf::RenderWindow window(sf::VideoMode(400, 400), "Boxes", sf::Style::Titlebar | sf::Style::Close,
+    sf::RenderWindow window(sf::VideoMode(400, 400), "Point Hit Test", sf::Style::Titlebar | sf::Style::Close,
                             context);
     window.setFramerateLimit(60);
 
