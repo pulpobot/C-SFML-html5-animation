@@ -1,7 +1,4 @@
 #include "Line.h"
-#include <math.h>
-#include <iostream>
-#include "SFML\Graphics.hpp"
 
 Line::Line(float x, float y, float length, sf::Color color) {
     shape = sf::RectangleShape(sf::Vector2f(length, 2));
@@ -44,7 +41,7 @@ void Line::SetRotation(float angle) {
 }
 
 void Line::Rotate(float angle) {
-    shape.setRotation(angle + shape.getRotation());
+    shape.rotate(angle);
 }
 
 float Line::Rotation() {

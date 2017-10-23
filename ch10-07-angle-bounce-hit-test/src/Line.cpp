@@ -44,7 +44,7 @@ void Line::SetRotation(float angle) {
 }
 
 void Line::Rotate(float angle) {
-    shape.setRotation(angle + shape.getRotation());
+    shape.rotate(angle);
 }
 
 float Line::Rotation() {
