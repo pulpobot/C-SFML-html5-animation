@@ -17,6 +17,19 @@ int main() {
                             context);
     window.setFramerateLimit(60);
 
+    sf::Font font;
+    if(!font.loadFromFile("res/cour.ttf")){
+        std::cerr << "Error loading cout.ttf file" << std::endl;
+        return -1;
+    }
+
+    sf::Text infoText;
+    infoText.setFont(font);
+    infoText.setCharacterSize(15);
+    infoText.setFillColor(sf::Color::Black);
+    infoText.setPosition(sf::Vector2f(10,window.getSize().y - 30));
+    infoText.setString("Press and drag slider handles with mouse.");
+
     Segment segment0 = Segment(100, 20);
     Segment segment1 = Segment(100, 20);
     Slider slider0 = Slider(-90,90,0);
@@ -67,6 +80,7 @@ int main() {
         slider0.Draw(window);
         segment1.Draw(window);
         slider1.Draw(window);
+        window.draw(infoText);
         window.display();
     }
 }
