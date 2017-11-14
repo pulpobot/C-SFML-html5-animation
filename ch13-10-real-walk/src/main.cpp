@@ -64,7 +64,7 @@ int main() {
 
     sf::Font font;
     if (!font.loadFromFile("res/cour.ttf")) {
-        std::cerr << "Error loading cout.ttf file" << std::endl;
+        std::cerr << "Error loading cour.ttf file" << std::endl;
         return -1;
     }
 
