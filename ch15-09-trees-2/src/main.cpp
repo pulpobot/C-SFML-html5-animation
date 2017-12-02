@@ -17,8 +17,8 @@ float fl = 250,
         gravity = 0.3f,
         friction = 0.98f;
 
-bool zSort(const Tree &ballA, const Tree &ballB) {
-    return ballB.zPos < ballA.zPos;
+bool zSort(const Tree &treeA, const Tree &treeB) {
+    return treeB.zPos < treeA.zPos;
 }
 
 void Move(Tree &tree) {
