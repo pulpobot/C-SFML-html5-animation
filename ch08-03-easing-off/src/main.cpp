@@ -1,5 +1,6 @@
 #include "SFML\Graphics.hpp"
 #include <iostream>
+#include <math.h>
 #include "Ball.h"
 
 const float EASING = 0.05f;
