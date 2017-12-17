@@ -19,7 +19,7 @@ int main()
 	if (!texture.loadFromImage(image))
 		return -1;
 
-	sf::Sprite sprite = sf::Sprite(texture);
+	sf::Sprite sprite(texture);
 	sprite.setPosition(sf::Vector2f(100.0f, 100.0f));
 	window.clear(sf::Color::White);
 	window.draw(sprite);

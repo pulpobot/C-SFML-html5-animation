@@ -12,7 +12,7 @@ int main()
 	float range = 0.5f;
 	float speed = 0.05f;
 
-	Ball * ball = new Ball(window.getSize().x / 2.0f, window.getSize().y / 2.0f, 40, sf::Color::Red);
+	Ball ball(window.getSize().x / 2.0f, window.getSize().y / 2.0f, 40, sf::Color::Red);
 
 	while (window.isOpen())
 	{
@@ -28,10 +28,10 @@ int main()
 		}
 
 		angle += speed;
-		ball->shape.setScale(centerScale + std::sin(angle) * range, centerScale + std::sin(angle) * range);
+		ball.shape.setScale(centerScale + std::sin(angle) * range, centerScale + std::sin(angle) * range);
 
 		window.clear(sf::Color::White);
-		window.draw(ball->shape);
+		window.draw(ball.shape);
 		window.display();
 	}
 

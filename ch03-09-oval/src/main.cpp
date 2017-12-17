@@ -14,7 +14,7 @@ int main()
 	int radiusY = 100;
 	float speed = 0.05f;
 
-	Ball * ball = new Ball(centerX, centerY, 40, sf::Color::Red);
+	Ball ball(centerX, centerY, 40, sf::Color::Red);
 
 	while (window.isOpen())
 	{
@@ -30,10 +30,10 @@ int main()
 		}
 
 		angle += speed;
-		ball->shape.setPosition(centerX + std::cos(angle) * radiusX, centerY + std::sin(angle) * radiusY);
+		ball.shape.setPosition(centerX + std::cos(angle) * radiusX, centerY + std::sin(angle) * radiusY);
 
 		window.clear(sf::Color::White);
-		window.draw(ball->shape);
+		window.draw(ball.shape);
 		window.display();
 	}
 

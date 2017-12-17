@@ -10,7 +10,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800,600), "Rotate To Mouse", sf::Style::Titlebar | sf::Style::Close);
 	window.setFramerateLimit(60);
 	
-	Arrow * arrow = new Arrow(window.getSize().x/2.0f, window.getSize().y / 2.0f);
+	Arrow arrow(window.getSize().x/2.0f, window.getSize().y / 2.0f);
 
 	sf::Clock ticker;
 	sf::Time deltaTime;
@@ -29,17 +29,17 @@ int main()
 					window.close();
 					break;
 				case sf::Event::MouseMoved:
-					dx = event.mouseMove.x - arrow->shape.getPosition().x;
-					dy = event.mouseMove.y - arrow->shape.getPosition().y;
+					dx = event.mouseMove.x - arrow.shape.getPosition().x;
+					dy = event.mouseMove.y - arrow.shape.getPosition().y;
 					break;
 			}
 		}
 		//Clear the buffer
 		window.clear(sf::Color::White);
 		//Rotate arrow towards mouse (setRotation recieves degrees not radians)
-		arrow->shape.setRotation((std::atan2(dy,dx)) * 180 / M_PI);
+		arrow.shape.setRotation((std::atan2(dy,dx)) * 180 / M_PI);
 		//Draw shape
-		window.draw(arrow->shape);
+		window.draw(arrow.shape);
 		//Display
 		window.display();
 	}

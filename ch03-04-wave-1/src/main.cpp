@@ -13,8 +13,7 @@ int main()
 	float range = 50;
 	float centerY = window.getSize().y / 2.0f;
 
-	Ball * ball = new Ball(0, centerY, 40, sf::Color::Red);
-
+	Ball ball(0, centerY, 40, sf::Color::Red);
 
 	while (window.isOpen())
 	{
@@ -30,12 +29,10 @@ int main()
 		}
 
 		angle += ySpeed;
-		ball->shape.setPosition(ball->shape.getPosition().x + xSpeed, centerY + std::sin(angle) * range);
+		ball.shape.setPosition(ball.shape.getPosition().x + xSpeed, centerY + std::sin(angle) * range);
 
 		window.clear(sf::Color::White);
-		window.draw(ball->shape);
+		window.draw(ball.shape);
 		window.display();
 	}
-
-
 }
